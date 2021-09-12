@@ -1,8 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+@font-face {
+    font-family: iran;
+    src: url('./font/IRANSans_Light.ttf');
+}
+body{
+    overflow-x: hidden;
+}
 *{
     box-sizing: border-box;
     margin: 0;
-    font-family: 'Lalezar', cursive;
+    font-family: iran, sans-serif;
 }
 .hero{
     width: 100%;
@@ -14,17 +20,37 @@
     justify-content: center;
     position: relative;
 }
+.hero .premium{
+    background-color: rgb(251, 255, 0);
+    position:fixed;
+    top:50px;
+    left: 50px;
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    text-align: center;
+    border-radius:50%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    z-index: 9999;
+}
+.hero .premium i{
+    color:rgb(0, 0, 0);
+    font-size:25px;
+}
 .hero .person-info{
 background-color: #fff;
 padding: 20px;
 height: 300px;
 position: absolute;
-top: 150px;
+top: 100px;
 display: flex;
 align-items: center;
 justify-content: space-around;
 flex-direction: column;
 border-radius: 14px;
+text-align: center;
 }
 .hero .person-info #proLang{
     direction: rtl;
@@ -44,7 +70,7 @@ border-radius: 14px;
 }
 .hero .person-info #btn-find{
     margin-top: 20px;
-    width: 200px;
+    width: 230px;
     height: 80px;
     outline: none;
     border: none;
@@ -62,16 +88,17 @@ border-radius: 14px;
     text-align: center;
     border-radius:4px;
     padding: 6px;
+  
 }
 .hero .random-codemates{
     width: 100%;
     position: absolute;
-    top: 500px;
+    top: 420px;
     height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    flex-direction: column;
 }
 .heading{
     margin-top: 250px;
@@ -85,7 +112,12 @@ border-radius: 14px;
     justify-content: space-between;
     padding: 20px;
     border-radius: 14px;
-    
+   
+}
+.hero .random-codemates .codemate-card h1,h2,h3{
+    font-family: iran,sans-serif !important;
+    direction: rtl;
+    color: rgb(0, 0, 0);
 }
 .hero #you{
     list-style: none;
@@ -93,6 +125,9 @@ border-radius: 14px;
 }
 .hero #you li{
     direction: rtl;
+    font-size:18px;
+    font-weight: bold;
+    color:#000;
 }
 #code-name{
     font-family:sans-serif;
@@ -104,4 +139,33 @@ border-radius: 14px;
 #code-mail{
     font-family:sans-serif;
     font-size: 22px;
+}
+@media screen and (max-width:900px){
+    .hero .premium{
+        top: 200px;
+        left: 20px;
+    }
+}
+@media screen and (max-width:800px){
+   
+    .hero .person-info{
+        top: 20px;
+        height: 400px;
+        
+    }
+    .hero .random-codemates .codemate-card{
+        width: 480px;
+        flex-direction: column;
+        top: 440px;
+    }
+}
+@media screen and (max-width:380px){
+    .you-are{
+        width: 300px;
+    }
+    .person-info #btn-find{
+        width: 100px;
+        height: 50px;
+        font-size: 15px;
+    }
 }
